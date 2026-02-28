@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2BHK For Rent | Vinayaka Extension, Davanagere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAF7F2;
+      --warm-dark: #1A1208;
+      --gold: #C9973A;
+      --gold-light: #E8C278;
+      --text: #2D2410;
+      --muted: #7A6A52;
+      --card-bg: #FFFFFF;
+      --border: #E8E0D2;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    @media (min-width: 768px) { body { padding-bottom: 0; } }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      background: var(--warm-dark);
+      padding: 2.5rem 1.25rem 3rem;
+      overflow: hidden;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(201,151,58,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--gold); color: #fff;
+      font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.35rem 1rem; border-radius: 100px;
+      margin-bottom: 1.25rem;
+      animation: fadeDown 0.6s ease both;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      color: #fff; line-height: 1.15;
+      margin-bottom: 0.75rem;
+      animation: fadeDown 0.7s 0.1s ease both;
+    }
+    .hero h1 span { color: var(--gold-light); }
+    .hero-sub {
+      color: rgba(255,255,255,0.65); font-size: 1rem;
+      margin-bottom: 2rem;
+      animation: fadeDown 0.7s 0.2s ease both;
+    }
+    .hero-stats {
+      display: flex; justify-content: center;
+      gap: 2rem; flex-wrap: wrap;
+      animation: fadeDown 0.7s 0.3s ease both;
+    }
+    .stat { text-align: center; }
+    .stat-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; color: var(--gold-light); display: block;
+    }
+    .stat-lbl {
+      font-size: 0.75rem; color: rgba(255,255,255,0.5);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    /* SECTIONS */
+    .section { padding: 3rem 1.25rem; max-width: 860px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.7rem; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: var(--warm-dark); margin-bottom: 1.25rem;
+    }
+    .divider {
+      width: 48px; height: 3px;
+      background: var(--gold); border-radius: 99px; margin-bottom: 1.5rem;
+    }
+
+    /* VIDEO */
+    .video-wrap {
+      height: 100%; ;
+      background: #000; border-radius: 16px;
+      overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.15);
+      position: relative;
+    }
+    .video-wrap video, .video-wrap iframe { width: 100%; height: 100%; object-fit: cover; border: none; }
+    .video-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #1a1208 0%, #2e1f08 100%);
+      gap: 0.75rem;
+    }
+    .video-placeholder svg { opacity: 0.4; }
+    .video-placeholder strong { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+    .video-placeholder p { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+
+    /* PRICE */
+    .price-banner {
+      background: linear-gradient(135deg, var(--gold) 0%, #e6a832 100%);
+      border-radius: 16px; padding: 1.5rem;
+      text-align: center; margin-top: 1.5rem; color: #fff;
+    }
+    .price-banner .price { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; }
+    .price-banner .price-note { font-size: 0.8rem; opacity: 0.8; margin-top: 0.25rem; }
+
+    /* DETAILS */
+    .details-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1rem; margin-top: 1.5rem;
+    }
+    @media (min-width: 600px) { .details-grid { grid-template-columns: repeat(3, 1fr); } }
+    .detail-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.25rem 1rem; text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .detail-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .detail-icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+    .detail-val { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: var(--warm-dark); display: block; }
+    .detail-key { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; }
+
+    /* AMENITIES */
+    .amenities-list { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.25rem; }
+    .amenity-chip {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 100px; padding: 0.45rem 1rem;
+      font-size: 0.82rem; color: var(--text);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+
+    /* ABOUT */
+    .about-box {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.75rem; margin-top: 1.25rem;
+    }
+    .about-box p { color: var(--muted); line-height: 1.8; font-size: 0.95rem; }
+
+    /* NEARBY */
+    .nearby-list { list-style: none; margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .nearby-list li {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1rem 1.25rem;
+      display: flex; align-items: center; gap: 1rem; font-size: 0.9rem;
+    }
+    .nearby-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .nearby-name { font-weight: 500; color: var(--warm-dark); }
+    .nearby-dist { font-size: 0.78rem; color: var(--muted); }
+
+    /* MAP */
+    .map-wrap {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      border: 1px solid var(--border);
+    }
+    .map-wrap iframe { width: 100%; height: 380px; border: none; display: block; }
+    .map-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1rem; color: var(--gold);
+      font-size: 0.88rem; font-weight: 500; text-decoration: none;
+    }
+    .map-link:hover { text-decoration: underline; }
+
+    /* CTA */
+    .cta-section { background: var(--warm-dark); padding: 3rem 1.25rem; text-align: center; }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif; color: #fff;
+      font-size: clamp(1.5rem, 4vw, 2.2rem); margin-bottom: 0.5rem;
+    }
+    .cta-section p { color: rgba(255,255,255,0.55); margin-bottom: 2rem; font-size: 0.9rem; }
+    .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.75rem; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 500; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer; border: none;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+    .btn-gold { background: var(--gold); color: #fff; }
+    .btn-wa { background: #25D366; color: #fff; }
+
+    footer {
+      text-align: center; padding: 1.5rem;
+      font-size: 0.75rem; color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* STICKY BAR */
+    .sticky-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--warm-dark);
+      padding: 0.85rem 1.25rem;
+      display: flex; gap: 0.75rem;
+      z-index: 999;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .sticky-bar .btn { flex: 1; justify-content: center; font-size: 0.85rem; padding: 0.75rem; }
+    @media (min-width: 768px) { .sticky-bar { display: none; } }
+
+    /* ANIMATIONS */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">&#127968; Available Now</div>
+  <h1>Beautiful <span>2BHK</span><br>For Rent</h1>
+  <p class="hero-sub">&#128205; Vinayaka Extension, Davanagere, Karnataka</p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">2</span><span class="stat-lbl">Bedrooms</span></div>
+    <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">Bathrooms</span></div>
+    <div class="stat"><span class="stat-val">about 800</span><span class="stat-lbl">Sq. Ft.</span></div>
+    <div class="stat"><span class="stat-val">1st</span><span class="stat-lbl">Floor</span></div>
+  </div>
+</section>
+
+<!-- VIDEO TOUR -->
+<div class="section reveal">
+  <p class="section-label">Virtual Tour</p>
+  <h2 class="section-title">Walk Through the Home</h2>
+  <div class="divider"></div>
+  <div class="video-wrap">
+    <iframe
+  width="315"
+  height="560"
+  src="https://www.youtube-nocookie.com/embed/9Fdel-s_juM"
+  title="YouTube Short"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+    </div>
+  </div>
+</div>
+<a href="https://www.youtube.com/watch?v=9Fdel-s_juM" 
+target="_blank"
+style="display:flex;align-items:center;justify-content:center;height:100%;color:white;text-decoration:none;background:#000;">
+▶ Watch Video on YouTube
+</a>
+
+<!-- PRICE -->
+<div class="section reveal" style="padding-top:0">
+  <div class="price-banner">
+    <div class="price">&#8377;15,000 <span style="font-size:1.1rem;font-weight:400">/month</span></div>
+    <div class="price-note">Contact owner for deposit and maintenance details</div>
+  </div>
+</div>
+
+<!-- KEY DETAILS -->
+<div class="section reveal" style="padding-top:0">
+  <p class="section-label">At a Glance</p>
+  <h2 class="section-title">Property Details</h2>
+  <div class="divider"></div>
+  <div class="details-grid">
+    <div class="detail-card">
+      <div class="detail-icon">&#127968;</div>
+      <span class="detail-val">2 BHK</span>
+      <span class="detail-key">Type</span>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon">&#128208;</div>
+      <span class="detail-val">about 800 sqft</span>
+      <span class="detail-key">Area</span>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon">&#127970;</div>
+      <span class="detail-val">1st Floor</span>
+      <span class="detail-key">Floor</span>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon">&#127949;</div>
+      <span class="detail-val">Available</span>
+      <span class="detail-key">bike Parking</span>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon">&#128197;</div>
+      <span class="detail-val">Immediate</span>
+      <span class="detail-key">Move-in</span>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon">&#127968;</div>
+      <span class="detail-val">Semi-furnished</span>
+      <span class="detail-key">Furnishing</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section reveal" style="padding-top:0">
+  <p class="section-label">Description</p>
+  <h2 class="section-title">About This Home</h2>
+  <div class="divider"></div>
+  <div class="about-box">
+    <p>
+      This well-maintained 2BHK apartment is located at 3588/19, behind Taralabalu Krishi Vignan Kendra,
+      Vinayaka Extension, Davanagere, Karnataka. The House is in a peaceful residential neighbourhood,
+      receives good natural light, and is ideal for families or working professionals.
+      The area is well-connected with easy access to markets, schools, and hospitals.
+      No broker involved — deal directly with the owner.
+    </p>
+  </div>
+</div>
+
+<!-- AMENITIES -->
+<div class="section reveal" style="padding-top:0">
+  <p class="section-label">Facilities</p>
+  <h2 class="section-title">Amenities</h2>
+  <div class="divider"></div>
+  <div class="amenities-list">
+    <!-- <div class="amenity-chip">&#128274; 24/7 Security</div> -->
+    <!-- <div class="amenity-chip">&#128161; Power Backup</div> -->
+    <div class="amenity-chip">&#128167; Water 24/7</div>
+    <div class="amenity-chip">&#128663; Parking</div>
+    <!-- <div class="amenity-chip">&#128225; Broadband Ready</div> -->
+    <div class="amenity-chip">&#127807; Garden Area</div>
+    <div class="amenity-chip">&#128704; 1 Bathroom</div>
+    <div class="amenity-chip">&#128701; 1 Toilet</div>
+    <!-- <div class="amenity-chip">&#128230; Storage Room</div> -->
+  </div>
+</div>
+
+<!-- NEARBY -->
+<div class="section reveal" style="padding-top:0">
+  <p class="section-label">Location</p>
+  <h2 class="section-title">What's Nearby</h2>
+  <div class="divider"></div>
+  <ul class="nearby-list">
+    <li>
+      <span class="nearby-icon">&#127806;</span>
+      <div>
+        <div class="nearby-name">Taralabalu Krishi Vignan Kendra</div>
+        <div class="nearby-dist">Right in front of the property</div>
+      </div>
+    </li>
+    <li>
+      <span class="nearby-icon">&#128722;</span>
+      <div>
+        <div class="nearby-name">Local Market and Shops</div>
+        <div class="nearby-dist">~5 min walk</div>
+      </div>
+    </li>
+    <li>
+      <span class="nearby-icon">&#127973;</span>
+      <div>
+        <div class="nearby-name">Hospitals and Clinics</div>
+        <div class="nearby-dist">Nearby in Davanagere city</div>
+      </div>
+    </li>
+    <li>
+      <span class="nearby-icon">&#127979;</span>
+      <div>
+        <div class="nearby-name">Schools and Colleges</div>
+        <div class="nearby-dist">Multiple within close range</div>
+      </div>
+    </li>
+    <li>
+      <span class="nearby-icon">&#128652;</span>
+      <div>
+        <div class="nearby-name">Bus Stop</div>
+        <div class="nearby-dist">Easy connectivity to city centre</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- MAP -->
+<div class="section reveal" style="padding-top:0">
+  <p class="section-label">Find Us</p>
+  <h2 class="section-title">Location on Map</h2>
+  <div class="divider"></div>
+  <div class="map-wrap">
+    <iframe
+      src="https://maps.google.com/maps?q=Vinayaka+Extension+Davanagere+Karnataka+India&t=&z=16&ie=UTF8&iwloc=&output=embed"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <a class="map-link" href="https://maps.app.goo.gl/2VAHaqpjBLadBu5PA" target="_blank">
+    &#128205; Open Exact Location in Google Maps &#8594;
+  </a>
+</div>
+
+<!-- CTA -->
+<section class="cta-section reveal">
+  <h2>Interested? Let's Talk!</h2>
+  <p>Contact the owner directly — No broker, No extra charges</p>
+  <div class="cta-buttons">
+    <a class="btn btn-wa"
+       href="https://wa.me/919901767955?text=Hi%2C%20I%20saw%20your%202BHK%20listing%20in%20Vinayaka%20Extension%2C%20Davanagere%20and%20I%20am%20interested!"
+       target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+      </svg>
+      WhatsApp
+    </a>
+    <a class="btn btn-gold" href="tel:+919901767955">
+      &#128222; Call Owner
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&#169; 2026 &middot; 2BHK Rental Listing &middot; No Broker &middot; Vinayaka Extension, Davanagere, Karnataka</p>
+</footer>
+
+<!-- STICKY MOBILE BAR -->
+<div class="sticky-bar">
+  <a class="btn btn-wa"
+     href="https://wa.me/919901767955?text=Hi%2C%20I%20saw%20your%202BHK%20listing%20in%20Vinayaka%20Extension%2C%20Davanagere!"
+     target="_blank">&#128172; WhatsApp</a>
+  <a class="btn btn-gold" href="tel:+919901767955">&#128222; Call</a>
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(r => io.observe(r));
+</script>
+
+</body>
+</html>
